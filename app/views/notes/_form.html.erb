@@ -1,5 +1,12 @@
-
-<h1><%= noteType%></h1>
+<% if categoryNum == 1 %>
+  <h1>Start</h1>
+<% elsif categoryNum == 2 %>
+  <h1>Stop</h1>
+<% elsif categoryNum == 3 %>
+  <h1>Continue</h1>
+<% elsif  categoryNum == 4 %>
+  <h1>Aha</h1>  
+<%end%>
 <%= form_for(@note) do |f| %>
   <% if @note.errors.any? %>
     <div id="error_explanation">
@@ -21,8 +28,8 @@
     <%= f.hidden_field :retro_id %>
   </div>
   <div class="field">
-    <%= f.label :category_id %><br />
-    <%= f.number_field :category_id %>
+    
+    <%= f.hidden_field :category_id, :value => categoryNum.to_i %>
   </div>
   <div class="actions">
     <%= f.submit %>

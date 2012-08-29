@@ -10,10 +10,10 @@
   <%= @retro.team_id %>
 </p>
 
-<%= render('notes/form', :noteType => "Start") %>
-<%= render('notes/form', :noteType => "Stop") %>
-<%= render('notes/form', :noteType => "Continue") %>
-<%= render('notes/form', :noteType => "AHA") %>
+<%= render('notes/form', :categoryNum => 1) %>
+<%= render('notes/form', :categoryNum => 2) %>
+<%= render('notes/form', :categoryNum => 3) %>
+<%= render('notes/form', :categoryNum => 4) %>
 
 <%= link_to 'Edit', edit_retro_path(@retro) %> |
 <%= link_to 'Back', retros_path %>
